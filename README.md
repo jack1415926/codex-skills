@@ -6,7 +6,7 @@
 
 - 36 个已安装技能与 `claude-skills` 上游提交 `fcc69cc9` 的 `SKILL.md` 完全相同。
 - `ponytail`、`karpathy-skills` 和 `claude-plugins-official` 已与其登记远程同步。
-- 全局安装目录中的 43 个直接技能目录均包含有效 YAML 前置元数据。
+- 全局安装目录中的 42 个直接技能目录均包含有效 YAML 前置元数据。
 
 这些是静态和来源验证，不等同于每一种外部工具、账户或 API 都已运行成功。
 
@@ -34,6 +34,8 @@ pwsh ./scripts/stage-update.ps1 -Source claude-skills -Skill graphviz
 Codex 当前加载了 OpenAI 运行时维护的 `documents`、`presentations`、`spreadsheets` 和 `pdf`（版本 `26.819.11345`）。处理 Word、演示文稿、工作簿或 PDF 时，优先使用这些官方运行时技能；仓库中的 `docx`、`pptx`、`xlsx` 和 `pdf` 快照仅保留作兼容参考，避免两个相似技能同时被当作默认入口。
 
 这些旧快照位于 `archive/office/`，不会由本仓库的安装脚本安装。
+
+`canvas` 与 `json-canvas` 都使用兼容 Obsidian Canvas 的数据模型；为避免重复常驻，`canvas` 已转为按需技能。需要在 Markdown 中输出围栏式 Canvas JSON 时再执行 `pwsh ./scripts/install-managed-skill.ps1 -Skill canvas`；需要创建或编辑真实 `.canvas` 文件时，使用常驻的 `json-canvas`。
 
 ## 安装已审阅的受管技能
 

@@ -47,7 +47,11 @@
   ],
   "local_overrides": [
     { "skill": "agents-md-improver", "reason": "Codex-native successor to the archived CLAUDE.md workflow" },
-    { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" }
+    { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" },
+    { "skill": "defuddle", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "graphify", "reason": "Codex writable-worker workflow replaces Claude Agent tool syntax" },
+    { "skill": "mcp-builder", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "web-design-guidelines", "reason": "Codex-native URL-reader wording replaces WebFetch" }
   ],
   "official_runtime": [
     { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
