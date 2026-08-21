@@ -9,7 +9,7 @@
       "checkout": "upstream/claude-skills",
       "revision": "fcc69cc9db1fbb93875756d065baa058f662dfbf",
       "skill_path": "skills",
-      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification and qwen-mm-plugins-api are local divergences and must be reviewed manually."
+      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification is a local divergence and must be reviewed manually."
     },
     {
       "id": "ponytail",
@@ -45,5 +45,11 @@
     "skill-creator",
     "mo2-modlist-sort",
     "skyrim-mod-translation"
+  ],
+  "official_runtime": [
+    { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
+    { "skill": "presentations", "version": "26.819.11345", "role": "preferred presentation workflow" },
+    { "skill": "spreadsheets", "version": "26.819.11345", "role": "preferred spreadsheet workflow" },
+    { "skill": "pdf", "version": "26.819.11345", "role": "preferred PDF workflow" }
   ]
 }
