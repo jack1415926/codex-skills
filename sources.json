@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "managed_install_root": "C:\\Users\\ROG\\.codex\\skills",
+  "sources": [
+    {
+      "id": "claude-skills",
+      "type": "git",
+      "remote": "https://github.com/jack1415926/claude-skills.git",
+      "checkout": "upstream/claude-skills",
+      "revision": "fcc69cc9db1fbb93875756d065baa058f662dfbf",
+      "skill_path": "skills",
+      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification and qwen-mm-plugins-api are local divergences and must be reviewed manually."
+    },
+    {
+      "id": "ponytail",
+      "type": "git-plugin",
+      "remote": "https://github.com/DietrichGebert/ponytail.git",
+      "checkout": "C:\\Users\\ROG\\.claude\\plugins\\marketplaces\\ponytail",
+      "revision": "2ed6c52c9d7e5e56942508591085fd45dea277d3",
+      "skill_path": "skills",
+      "skills": ["ponytail", "ponytail-audit", "ponytail-debt", "ponytail-gain", "ponytail-help", "ponytail-review"]
+    },
+    {
+      "id": "karpathy-skills",
+      "type": "git-plugin",
+      "remote": "https://github.com/forrestchang/andrej-karpathy-skills.git",
+      "checkout": "C:\\Users\\ROG\\.claude\\plugins\\marketplaces\\karpathy-skills",
+      "revision": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "skill_path": "skills",
+      "skills": ["karpathy-guidelines"]
+    },
+    {
+      "id": "claude-plugins-official",
+      "type": "git-plugin",
+      "remote": "https://github.com/anthropics/claude-plugins-official.git",
+      "checkout": "C:\\Users\\ROG\\.claude\\plugins\\marketplaces\\claude-plugins-official",
+      "revision": "67a666efc8524ff7abaa266f84e514aa77aee48f",
+      "skill_path": "plugins/claude-md-management/skills",
+      "skills": ["claude-md-improver"]
+    }
+  ],
+  "local_only": [
+    "frontend-jank-debugging",
+    "pdf",
+    "skill-creator",
+    "mo2-modlist-sort",
+    "skyrim-mod-translation"
+  ]
+}

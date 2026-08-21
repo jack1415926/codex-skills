@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "math-tutor": {
+      "source": "cdmorozov/claude-tutors",
+      "sourceType": "github",
+      "skillPath": "math-tutor/SKILL.md",
+      "computedHash": "268df694a336d781a8023a6a7caa3bc5608c65c9fbf92688131e53657bfb4d77"
+    },
+    "programming-tutor": {
+      "source": "cdmorozov/claude-tutors",
+      "sourceType": "github",
+      "skillPath": "programming-tutor/SKILL.md",
+      "computedHash": "251cb407fb544cdcc2e301e47b9baf9e2b3a59325f8084f72dc3c5c8a38bdc19"
+    },
+    "shadow-tutor": {
+      "source": "lzfxxx/shadow-tutor",
+      "sourceType": "github",
+      "skillPath": "skills/shadow-tutor/SKILL.md",
+      "computedHash": "305b32277eb01a2a21481574f548b1133c78b5804af4138fe1e374cf988763ff"
+    },
+    "tutor": {
+      "source": "cdmorozov/claude-tutors",
+      "sourceType": "github",
+      "skillPath": "tutor/SKILL.md",
+      "computedHash": "285281be403631a48cc216b0cfa0aa8126bf2138297d9b027473d8459c8b8812"
+    }
+  }
+}
