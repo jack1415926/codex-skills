@@ -65,7 +65,8 @@
     { "skill": "defuddle", "reason": "Codex-native URL-reader wording replaces WebFetch" },
     { "skill": "graphify", "reason": "Codex writable-worker workflow replaces Claude Agent tool syntax" },
     { "skill": "mcp-builder", "reason": "Codex-native URL-reader wording replaces WebFetch" },
-    { "skill": "web-design-guidelines", "reason": "Codex-native URL-reader wording replaces WebFetch" }
+    { "skill": "web-design-guidelines", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "windows-proxy-install", "reason": "Codex-native Windows, Clash, GitHub, npm, plugin, and MCP troubleshooting replaces Claude-specific install instructions" }
   ],
   "official_runtime": [
     { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
