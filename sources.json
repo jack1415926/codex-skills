@@ -41,10 +41,13 @@
   ],
   "local_only": [
     "frontend-jank-debugging",
-    "pdf",
     "skill-creator",
     "mo2-modlist-sort",
     "skyrim-mod-translation"
+  ],
+  "local_overrides": [
+    { "skill": "agents-md-improver", "reason": "Codex-native successor to the archived CLAUDE.md workflow" },
+    { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" }
   ],
   "official_runtime": [
     { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
