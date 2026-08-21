@@ -45,6 +45,20 @@
     "mo2-modlist-sort",
     "skyrim-mod-translation"
   ],
+  "project_bindings": [
+    {
+      "skill": "mo2-modlist-sort",
+      "project": "F:\\codex_project\\skyrim\\重命名和排序mod",
+      "entrypoint": "AGENTS.md",
+      "scope": "project guidance; not globally installed"
+    },
+    {
+      "project": "F:\\ObsidianNotes",
+      "skill_root": ".agents\\skills",
+      "skills": ["obsidian-cli", "obsidian-markdown", "obsidian-bases"],
+      "scope": "load only while working in this vault"
+    }
+  ],
   "local_overrides": [
     { "skill": "agents-md-improver", "reason": "Codex-native successor to the archived CLAUDE.md workflow" },
     { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" },

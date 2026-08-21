@@ -1,12 +1,12 @@
 # Codex skills 管理库
 
-这个仓库只管理**来源、版本与兼容性证据**；`C:\Users\ROG\.codex\skills` 是当前的全局安装位置。更新流程始终先检查和审查，绝不自动覆盖已安装技能或本地改动。
+这个仓库只管理**来源、版本与兼容性证据**；`C:\Users\ROG\.codex\skills` 是当前的全局安装位置。项目专属技能可以位于项目的 `.agents\skills` 根目录。更新流程始终先检查和审查，绝不自动覆盖已安装技能或本地改动。
 
 ## 已验证基线（2026-08-21）
 
 - 36 个已安装技能与 `claude-skills` 上游提交 `fcc69cc9` 的 `SKILL.md` 完全相同。
 - `ponytail`、`karpathy-skills` 和 `claude-plugins-official` 已与其登记远程同步。
-- 全局安装目录中的 42 个直接技能目录均包含有效 YAML 前置元数据。
+- 全局安装目录中的 39 个直接技能目录均包含有效 YAML 前置元数据。
 
 这些是静态和来源验证，不等同于每一种外部工具、账户或 API 都已运行成功。
 
@@ -51,10 +51,15 @@ pwsh ./scripts/install-managed-skill.ps1 -Skill ponytail-help -Replace
 
 - 使用 `agents-md-improver` 审计 Codex 的 `AGENTS.md`；原 `claude-md-improver` 已作为 Claude 迁移参考归档。
 - `ponytail-help` 已改为本仓库的 Codex 审计与安装流程；不要使用其中上游版本曾要求的 Claude 插件命令。
-- `graphify`、`defuddle`、`web-design-guidelines` 等含旧宿主工具名；使用时必须映射到本会话可用的浏览、命令和协作能力。
+- `defuddle`、`graphify`、`mcp-builder` 与 `web-design-guidelines` 已改用 Codex 的原生 URL 读取和可写 worker 表述。
+
+## 项目级技能
+
+- `F:\\ObsidianNotes\\.agents\\skills`：`obsidian-cli`、`obsidian-markdown`、`obsidian-bases`。仅在该笔记库中工作时加载。
+- `F:\\codex_project\\skyrim\\重命名和排序mod\\AGENTS.md`：`mo2-modlist-sort` 的项目级工作流入口，不作为全局技能安装。
 
 ## 重复根目录的处理
 
-已将 `C:\\Users\\ROG\\.agents\\skills` 可恢复地移动到 `C:\\Users\\ROG\\.agents\\skills-archive-20260821`。迁移前按 `SKILL.md` 内容比对，其中 23 个与全局目录完全相同、12 个存在差异；全局 `C:\\Users\\ROG\\.codex\\skills` 现为唯一活动的用户技能根目录。
+已将 `C:\\Users\\ROG\\.agents\\skills` 可恢复地移动到 `C:\\Users\\ROG\\.agents\\skills-archive-20260821`。迁移前按 `SKILL.md` 内容比对，其中 23 个与全局目录完全相同、12 个存在差异；全局 `C:\\Users\\ROG\\.codex\\skills` 现为唯一的共享用户技能根目录，项目可另设隔离的 `.agents\\skills`。
 
 来源、固定提交和本地安装位置见 [sources.json](sources.json)。
