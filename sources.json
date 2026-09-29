@@ -1,6 +1,7 @@
 {
   "schema": 1,
   "managed_install_root": "C:\\Users\\ROG\\.codex\\skills",
+  "additional_install_roots": ["C:\\Users\\ROG\\.agents\\skills"],
   "sources": [
     {
       "id": "claude-skills",
@@ -9,16 +10,89 @@
       "checkout": "upstream/claude-skills",
       "revision": "fcc69cc9db1fbb93875756d065baa058f662dfbf",
       "skill_path": "skills",
-      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification is a local divergence and must be reviewed manually."
+      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification is now an intentionally repurposed local override."
     },
     {
       "id": "ponytail",
       "type": "git-plugin",
       "remote": "https://github.com/DietrichGebert/ponytail.git",
       "checkout": "C:\\Users\\ROG\\.claude\\plugins\\marketplaces\\ponytail",
-      "revision": "2ed6c52c9d7e5e56942508591085fd45dea277d3",
+      "revision": "e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156",
       "skill_path": "skills",
       "skills": ["ponytail", "ponytail-audit", "ponytail-debt", "ponytail-gain", "ponytail-help", "ponytail-review"]
+    },
+    {
+      "id": "agent-browser",
+      "type": "git",
+      "remote": "https://github.com/vercel-labs/agent-browser.git",
+      "checkout": "upstream/agent-browser",
+      "revision": "d01253d9db28d75080e36da3c1c31ef89454731e",
+      "skill_path": "skills",
+      "skills": ["agent-browser"],
+      "notes": "The global CLI is installed via npm; compare the installed Codex skill with skills/agent-browser before updating."
+    },
+    {
+      "id": "housecarl-core",
+      "type": "git",
+      "remote": "https://github.com/Avick3110/houseCARL.git",
+      "checkout": "upstream/housecarl",
+      "revision": "042fba4f45963d7870f92d595eeb2e525f047fa4",
+      "skill_path": "plugin/codex",
+      "skills": ["housecarl"]
+    },
+    {
+      "id": "housecarl-specialists",
+      "type": "git",
+      "remote": "https://github.com/Avick3110/houseCARL.git",
+      "checkout": "upstream/housecarl",
+      "revision": "042fba4f45963d7870f92d595eeb2e525f047fa4",
+      "skill_path": ".claude/skills",
+      "skills": ["kid-authoring", "mutagen-reference", "open-animation-replacer", "papyrus-reference", "skse-plugin-authoring", "skypatcher-authoring", "spid-authoring"]
+    },
+    {
+      "id": "anthropics-skills",
+      "type": "git",
+      "remote": "https://github.com/anthropics/skills.git",
+      "checkout": "F:\\claude_project\\检查更新推送skills\\upstream\\anthropics-skills",
+      "revision": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+      "skill_path": "skills",
+      "skills": ["frontend-design"]
+    },
+    {
+      "id": "ninehills-skills",
+      "type": "git",
+      "remote": "https://github.com/ninehills/skills.git",
+      "checkout": "F:\\claude_project\\检查更新推送skills\\upstream\\ninehills-skills",
+      "revision": "f3e82a7e2bfbed54fc2b4a715a1986f5f467e827",
+      "skill_path": "",
+      "skills": ["find-skills", "web-design-guidelines"]
+    },
+    {
+      "id": "frontend-design-pro",
+      "type": "git",
+      "remote": "https://github.com/claudekit/frontend-design-pro-demo.git",
+      "checkout": "F:\\claude_project\\检查更新推送skills\\upstream\\frontend-design-pro-demo",
+      "revision": "756b8d99618b2c4e8a90c89a99f678009468aae3",
+      "skill_path": "skills",
+      "skills": ["frontend-design-pro"]
+    },
+    {
+      "id": "shadcn-ui",
+      "type": "git",
+      "remote": "https://github.com/shadcn-ui/ui.git",
+      "checkout": "F:\\claude_project\\检查更新推送skills\\upstream\\shadcn-ui",
+      "revision": "db2db460a26fa84fb65c8d903b213925fbdee9ed",
+      "skill_path": "skills",
+      "skills": ["shadcn"]
+    },
+    {
+      "id": "obsidian-skills",
+      "type": "git",
+      "remote": "https://github.com/kepano/obsidian-skills.git",
+      "checkout": "F:\\claude_project\\检查更新推送skills\\upstream\\obsidian-skills",
+      "revision": "3ccff5338ea700537839b21900aa5358a0402c98",
+      "skill_path": "skills",
+      "skills": ["obsidian-cli", "obsidian-markdown", "obsidian-bases"]
     },
     {
       "id": "karpathy-skills",
@@ -34,12 +108,13 @@
       "type": "git-plugin",
       "remote": "https://github.com/anthropics/claude-plugins-official.git",
       "checkout": "C:\\Users\\ROG\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-      "revision": "67a666efc8524ff7abaa266f84e514aa77aee48f",
+      "revision": "fbe07fb6ce7d51d8e86ca6efdf050059894cdb80",
       "skill_path": "plugins/claude-md-management/skills",
       "skills": ["claude-md-improver"]
     }
   ],
   "local_only": [
+    "agents-md-improver",
     "frontend-jank-debugging",
     "skill-creator",
     "mo2-modlist-sort",
@@ -49,8 +124,8 @@
     {
       "skill": "mo2-modlist-sort",
       "project": "F:\\codex_project\\skyrim\\重命名和排序mod",
-      "entrypoint": "AGENTS.md",
-      "scope": "project guidance; not globally installed"
+      "entrypoint": ".agents\\skills\\mo2-modlist-sort\\SKILL.md",
+      "scope": "project-local skill; load only while working in this project"
     },
     {
       "project": "F:\\ObsidianNotes",
@@ -61,6 +136,7 @@
   ],
   "local_overrides": [
     { "skill": "agents-md-improver", "reason": "Codex-native successor to the archived CLAUDE.md workflow" },
+    { "skill": "claim-verification", "reason": "Repurposed as an explicit-only evidence audit; baseline evidence rules remain in the global AGENTS.md" },
     { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" },
     { "skill": "defuddle", "reason": "Codex-native URL-reader wording replaces WebFetch" },
     { "skill": "graphify", "reason": "Codex writable-worker workflow replaces Claude Agent tool syntax" },
@@ -69,9 +145,9 @@
     { "skill": "windows-proxy-install", "reason": "Codex-native Windows, Clash, GitHub, npm, plugin, and MCP troubleshooting replaces Claude-specific install instructions" }
   ],
   "official_runtime": [
-    { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
-    { "skill": "presentations", "version": "26.819.11345", "role": "preferred presentation workflow" },
-    { "skill": "spreadsheets", "version": "26.819.11345", "role": "preferred spreadsheet workflow" },
-    { "skill": "pdf", "version": "26.819.11345", "role": "preferred PDF workflow" }
+    { "skill": "documents", "version": "26.909.12148", "role": "preferred Word/document workflow" },
+    { "skill": "presentations", "version": "26.909.12148", "role": "preferred presentation workflow" },
+    { "skill": "spreadsheets", "version": "26.909.12148", "role": "preferred spreadsheet workflow" },
+    { "skill": "pdf", "version": "26.909.12148", "role": "preferred PDF workflow" }
   ]
 }

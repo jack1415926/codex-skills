@@ -1,12 +1,12 @@
 # Codex skills 管理库
 
-这个仓库只管理**来源、版本与兼容性证据**；`C:\Users\ROG\.codex\skills` 是当前的全局安装位置。项目专属技能可以位于项目的 `.agents\skills` 根目录。更新流程始终先检查和审查，绝不自动覆盖已安装技能或本地改动。
+这个仓库管理**来源、版本、兼容性证据和已审阅的个人 Skill 快照**。本机用户级安装根为 `C:\Users\ROG\.codex\skills` 和 `C:\Users\ROG\.agents\skills`；项目专属技能位于项目的 `.agents\skills`。更新流程始终先检查和审查，绝不自动覆盖本地改写。
 
-## 已验证基线（2026-08-21）
+## 已验证基线（2026-09-29）
 
-- 36 个已安装技能与 `claude-skills` 上游提交 `fcc69cc9` 的 `SKILL.md` 完全相同。
-- `ponytail`、`karpathy-skills` 和 `claude-plugins-official` 已与其登记远程同步。
-- 全局安装目录中的 39 个直接技能目录均包含有效 YAML 前置元数据。
+- 27 个用户级 Skill 均包含有效 YAML 前置元数据；19 个与登记来源完整匹配，8 个是已登记的本地维护版本。
+- 4 个已知项目级 Skill 已纳入审计，其中 3 个与上游匹配，1 个为项目专用。
+- 所有登记来源的固定提交均与当前检出一致；houseCARL 的 8 个 Skill 由其独立官方仓库维护，不在本仓库重复 vendoring。
 
 这些是静态和来源验证，不等同于每一种外部工具、账户或 API 都已运行成功。
 
@@ -31,11 +31,11 @@ pwsh ./scripts/stage-update.ps1 -Source claude-skills -Skill graphviz
 
 ## Office 技能的默认选择
 
-Codex 当前加载了 OpenAI 运行时维护的 `documents`、`presentations`、`spreadsheets` 和 `pdf`（版本 `26.819.11345`）。处理 Word、演示文稿、工作簿或 PDF 时，优先使用这些官方运行时技能；仓库中的 `docx`、`pptx`、`xlsx` 和 `pdf` 快照仅保留作兼容参考，避免两个相似技能同时被当作默认入口。
+Codex 当前加载了 OpenAI 运行时维护的 `documents`、`presentations`、`spreadsheets` 和 `pdf`（版本 `26.909.12148`）。处理 Word、演示文稿、工作簿或 PDF 时，优先使用这些官方运行时技能；仓库中的 `docx`、`pptx`、`xlsx` 和 `pdf` 快照仅保留作兼容参考，避免两个相似技能同时被当作默认入口。
 
 这些旧快照位于 `archive/office/`，不会由本仓库的安装脚本安装。
 
-`canvas` 与 `json-canvas` 都使用兼容 Obsidian Canvas 的数据模型；为避免重复常驻，`canvas` 已转为按需技能。需要在 Markdown 中输出围栏式 Canvas JSON 时再执行 `pwsh ./scripts/install-managed-skill.ps1 -Skill canvas`；需要创建或编辑真实 `.canvas` 文件时，使用常驻的 `json-canvas`。
+`canvas` 仅保留为按需源快照；`json-canvas` 已于 2026-09-10 与其余 14 个可视化 Skill 一起移出全局安装目录，并保存在本地可恢复归档中。
 
 ## 安装已审阅的受管技能
 
@@ -56,10 +56,11 @@ pwsh ./scripts/install-managed-skill.ps1 -Skill ponytail-help -Replace
 ## 项目级技能
 
 - `F:\\ObsidianNotes\\.agents\\skills`：`obsidian-cli`、`obsidian-markdown`、`obsidian-bases`。仅在该笔记库中工作时加载。
-- `F:\\codex_project\\skyrim\\重命名和排序mod\\AGENTS.md`：`mo2-modlist-sort` 的项目级工作流入口，不作为全局技能安装。
+- `F:\\codex_project\\skyrim\\重命名和排序mod\\.agents\\skills\\mo2-modlist-sort`：项目级工作流，不作为全局 Skill 安装。
 
-## 重复根目录的处理
+## 用户级安装根
 
-已将 `C:\\Users\\ROG\\.agents\\skills` 可恢复地移动到 `C:\\Users\\ROG\\.agents\\skills-archive-20260821`。迁移前按 `SKILL.md` 内容比对，其中 23 个与全局目录完全相同、12 个存在差异；全局 `C:\\Users\\ROG\\.codex\\skills` 现为唯一的共享用户技能根目录，项目可另设隔离的 `.agents\\skills`。
+- `C:\\Users\\ROG\\.codex\\skills`：19 个本机管理或兼容迁移的用户 Skill；对应的已审阅快照位于本仓库 `skills/`。
+- `C:\\Users\\ROG\\.agents\\skills`：8 个 houseCARL Skill；内容由 `Avick3110/houseCARL` 上游维护，本仓库只记录其来源和固定提交。
 
 来源、固定提交和本地安装位置见 [sources.json](sources.json)。
