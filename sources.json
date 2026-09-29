@@ -9,7 +9,7 @@
       "checkout": "upstream/claude-skills",
       "revision": "fcc69cc9db1fbb93875756d065baa058f662dfbf",
       "skill_path": "skills",
-      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification and qwen-mm-plugins-api are local divergences and must be reviewed manually."
+      "notes": "36 installed skills matched this revision byte-for-byte during the 2026-08-21 audit. claim-verification is a local divergence and must be reviewed manually."
     },
     {
       "id": "ponytail",
@@ -41,9 +41,37 @@
   ],
   "local_only": [
     "frontend-jank-debugging",
-    "pdf",
     "skill-creator",
     "mo2-modlist-sort",
     "skyrim-mod-translation"
+  ],
+  "project_bindings": [
+    {
+      "skill": "mo2-modlist-sort",
+      "project": "F:\\codex_project\\skyrim\\重命名和排序mod",
+      "entrypoint": "AGENTS.md",
+      "scope": "project guidance; not globally installed"
+    },
+    {
+      "project": "F:\\ObsidianNotes",
+      "skill_root": ".agents\\skills",
+      "skills": ["obsidian-cli", "obsidian-markdown", "obsidian-bases"],
+      "scope": "load only while working in this vault"
+    }
+  ],
+  "local_overrides": [
+    { "skill": "agents-md-improver", "reason": "Codex-native successor to the archived CLAUDE.md workflow" },
+    { "skill": "ponytail-help", "reason": "Codex update instructions override the upstream Claude plugin commands" },
+    { "skill": "defuddle", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "graphify", "reason": "Codex writable-worker workflow replaces Claude Agent tool syntax" },
+    { "skill": "mcp-builder", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "web-design-guidelines", "reason": "Codex-native URL-reader wording replaces WebFetch" },
+    { "skill": "windows-proxy-install", "reason": "Codex-native Windows, Clash, GitHub, npm, plugin, and MCP troubleshooting replaces Claude-specific install instructions" }
+  ],
+  "official_runtime": [
+    { "skill": "documents", "version": "26.819.11345", "role": "preferred Word/document workflow" },
+    { "skill": "presentations", "version": "26.819.11345", "role": "preferred presentation workflow" },
+    { "skill": "spreadsheets", "version": "26.819.11345", "role": "preferred spreadsheet workflow" },
+    { "skill": "pdf", "version": "26.819.11345", "role": "preferred PDF workflow" }
   ]
 }

@@ -62,9 +62,11 @@ Resolution: env var > config file > `full`.
 
 ## Update
 
-Enable auto-update once: open `/plugin`, go to Marketplaces, pick ponytail, Enable auto-update. Claude Code then pulls new versions at startup (run `/reload-plugins` when it prompts). Manual refresh: `/plugin marketplace update ponytail` then `/reload-plugins`.
+This Codex copy is managed in the `codex-skills` repository. Do not use Claude Code's `/plugin` commands.
 
-If `/plugin` is not recognized, your Claude Code is out of date. Update it (`npm install -g @anthropic-ai/claude-code@latest`, or `brew upgrade claude-code`) and restart. Other hosts use their own update flow.
+1. Run `pwsh ./scripts/audit-skills.ps1 -Fetch -Proxy http://127.0.0.1:7890` in that repository.
+2. Stage the upstream change with `pwsh ./scripts/stage-update.ps1 -Source ponytail -Skill <skill-name>`.
+3. Review the staged diff. Then update the managed snapshot and install it with `scripts/install-managed-skill.ps1` only after approval.
 
 ## More
 
