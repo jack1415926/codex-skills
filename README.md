@@ -2,13 +2,22 @@
 
 这个仓库管理**来源、版本、兼容性证据和已审阅的个人 Skill 快照**。本机用户级安装根为 `C:\Users\ROG\.codex\skills` 和 `C:\Users\ROG\.agents\skills`；项目专属技能位于项目的 `.agents\skills`。更新流程始终先检查和审查，绝不自动覆盖本地改写。
 
-## 已验证基线（2026-09-29）
+## 已验证基线（2026-10-11）
 
-- 27 个用户级 Skill 均包含有效 YAML 前置元数据；19 个与登记来源完整匹配，8 个是已登记的本地维护版本。
+- 35 个用户级 Skill 均包含有效 YAML 前置元数据；27 个与登记来源完整匹配，8 个是已登记的本地维护版本。
 - 4 个已知项目级 Skill 已纳入审计，其中 3 个与上游匹配，1 个为项目专用。
 - 所有登记来源的固定提交均与当前检出一致；houseCARL 的 8 个 Skill 由其独立官方仓库维护，不在本仓库重复 vendoring。
 
 这些是静态和来源验证，不等同于每一种外部工具、账户或 API 都已运行成功。
+
+## Matt Pocock 工作流（2026-10-11 新增）
+
+- 用户选择：`grill-with-docs`、`grill-me`、`diagnosing-bugs`、`tdd`、`handoff`。
+- 共享依赖：`grilling`、`domain-modeling`、`codebase-design`。
+- 全部 8 个 Skill 的完整快照位于 `skills/`，包括参考文档、脚本和 Codex 调用配置。
+- `grill-me`、`grill-with-docs`、`handoff` 保持仅显式调用；其余保留上游调用策略。
+- 来源为 `mattpocock/skills`，固定提交 `49dd158d1076134a641b33efb035946536778336`；许可见 [MATTPOCOCK-LICENSE.txt](skills/MATTPOCOCK-LICENSE.txt)。
+- 本次验证为安装、文件一致性、调用策略和来源审计；尚未逐一进行实际业务运行验证。
 
 ## 日常操作
 
@@ -60,7 +69,7 @@ pwsh ./scripts/install-managed-skill.ps1 -Skill ponytail-help -Replace
 
 ## 用户级安装根
 
-- `C:\\Users\\ROG\\.codex\\skills`：19 个本机管理或兼容迁移的用户 Skill；对应的已审阅快照位于本仓库 `skills/`。
+- `C:\\Users\\ROG\\.codex\\skills`：27 个本机管理或兼容迁移的用户 Skill；对应的已审阅快照位于本仓库 `skills/`。
 - `C:\\Users\\ROG\\.agents\\skills`：8 个 houseCARL Skill；内容由 `Avick3110/houseCARL` 上游维护，本仓库只记录其来源和固定提交。
 
 来源、固定提交和本地安装位置见 [sources.json](sources.json)。

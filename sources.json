@@ -111,6 +111,34 @@
       "revision": "fbe07fb6ce7d51d8e86ca6efdf050059894cdb80",
       "skill_path": "plugins/claude-md-management/skills",
       "skills": ["claude-md-improver"]
+    },
+    {
+      "id": "mattpocock-engineering",
+      "type": "git",
+      "remote": "https://github.com/mattpocock/skills.git",
+      "checkout": "upstream/mattpocock-skills",
+      "revision": "49dd158d1076134a641b33efb035946536778336",
+      "skill_path": "skills/engineering",
+      "skills": [
+        "grill-with-docs",
+        "diagnosing-bugs",
+        "tdd",
+        "domain-modeling",
+        "codebase-design"
+      ]
+    },
+    {
+      "id": "mattpocock-productivity",
+      "type": "git",
+      "remote": "https://github.com/mattpocock/skills.git",
+      "checkout": "upstream/mattpocock-skills",
+      "revision": "49dd158d1076134a641b33efb035946536778336",
+      "skill_path": "skills/productivity",
+      "skills": [
+        "grill-me",
+        "handoff",
+        "grilling"
+      ]
     }
   ],
   "local_only": [
