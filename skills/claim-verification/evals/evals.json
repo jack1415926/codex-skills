@@ -1,0 +1,41 @@
+{
+  "skill_name": "claim-verification",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "$claim-verification 请逐条审计这份迁移报告，重点核查‘全部迁移成功’和‘没有遗漏’两个结论。",
+      "expected_output": "使用证据表区分已验证、推断和未知，并指出完成性结论所缺少的检查。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "$claim-verification 核查这份插件清单里‘已安装、已启用、运行可用’是否被混为一谈。",
+      "expected_output": "逐条区分配置、安装、启用、连接和运行状态，并引用直接证据。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "$claim-verification 复核这份性能对比，确认其中的百分比和‘明显更快’是否有实测支持。",
+      "expected_output": "识别定量和比较断言，核查测量证据，并保留无法确认的未知项。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "给我解释一下 RAG 的基本流程。",
+      "expected_output": "不应调用本 Skill；直接完成普通解释。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "修复这个函数的空指针错误并运行测试。",
+      "expected_output": "不应调用本 Skill；按普通编码和验证流程完成任务。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "总结这篇文章的三个重点。",
+      "expected_output": "不应调用本 Skill；直接完成摘要。",
+      "files": []
+    }
+  ]
+}
